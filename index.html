@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars Characters</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons (para el tacho y corazón) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    </head>
+    <body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-light bg-white shadow-sm px-4">
+    <span class="navbar-brand mb-0 h1 fw-bold">STAR WARS</span>
+
+    <!-- Dropdown favoritos -->
+    <div class="row g-4">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+        Favorites <span class="badge bg-secondary">2</span>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end p-2">
+        <li class="d-flex justify-content-between align-items-center">
+            <span>Luke Skywalker</span>
+            <i class="fa fa-trash text-dark"></i>
+        </li>
+        <li class="d-flex justify-content-between align-items-center mt-2">
+            <span>C-3PO</span>
+            <i class="fa fa-trash text-dark"></i>
+        </li>
+        </ul>
+    </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <div class="container mt-5">
+
+    <h1 class="text-danger mb-4">Characters</h1>
+
+    <div class="row" id="characters">
+
+        <!-- CARD 1 -->
+        <div class="col-md-4">
+        <div class="card shadow-sm">
+
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="">
+
+            <div class="card-body">
+            <h5 class="card-title">Luke Skywalker</h5>
+
+            <p class="card-text mb-1">Gender: male</p>
+            <p class="card-text mb-1">Hair Color: blond</p>
+            <p class="card-text">Eye-Color: blue</p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <button class="btn btn-outline-primary">Learn more!</button>
+
+                <button class="btn btn-outline-warning">
+                <i class="fa fa-heart"></i>
+                </button>
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-md-4">
+        <div class="card shadow-sm">
+
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="">
+
+            <div class="card-body">
+            <h5 class="card-title">C-3PO</h5>
+
+            <p class="card-text mb-1">Gender: n/a</p>
+            <p class="card-text mb-1">Hair Color: n/a</p>
+            <p class="card-text">Eye-Color: yellow</p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <button class="btn btn-outline-primary">Learn more!</button>
+
+                <button class="btn btn-warning">
+                <i class="fa fa-heart"></i>
+                </button>
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-md-4">
+        <div class="card shadow-sm">
+
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="">
+
+            <div class="card-body">
+            <h5 class="card-title">R2-D2</h5>
+
+            <p class="card-text mb-1">Gender: n/a</p>
+            <p class="card-text mb-1">Hair Color: n/a</p>
+            <p class="card-text">Eye-Color: red</p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <button class="btn btn-outline-primary">Learn more!</button>
+
+                <button class="btn btn-outline-warning">
+                <i class="fa fa-heart"></i>
+                </button>
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="app.js"></script>
+</body>
+
+</html>
