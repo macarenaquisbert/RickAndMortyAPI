@@ -1,3 +1,4 @@
+let favorites = [];
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
@@ -89,7 +90,8 @@ if (document.getElementById("characters")) {
                     Learn more!
                   </a>
 
-                  <button class="btn btn-outline-warning">
+                  <button class="btn btn-outline-warning" onclick="toggleFavorite(${character.id},
+                  '${character.name}')">
                     <i class="fa-regular fa-heart"></i>
                   </button>
 
@@ -103,4 +105,39 @@ if (document.getElementById("characters")) {
 
     })
     .catch(err => console.log(err));
+}
+// FUNCIONES DE FAVORITOS
+function toggleFavorite(id, name) {
+  const index = favorites.findIndex(f => f.id === id);
+
+  if (index === -1) {
+    favorites.push({ id, name });
+  } else {
+    favorites.splice(index, 1);
+  }
+
+  renderFavorites();
+}
+//MOSTRAR FAVORITOS EN EL DROPDOWN
+function renderFavorites() {
+  const list = document.querySelector(".dropdown-menu");
+  const count = document.querySelector(".badge");
+
+  list.innerHTML = "";
+
+  favorites.forEach(fav => {
+    list.innerHTML += `
+      <li class="d-flex justify-content-between align-items-center">
+        <span>${fav.name}</span>
+        <i class="fa-solid fa-trash" onclick="removeFavorite(${fav.id})"></i>
+      </li>
+    `;
+  });
+
+  count.textContent = favorites.length;
+}
+//ELIMINAR FAVORITO
+function removeFavorite(id) {
+  favorites = favorites.filter(f => f.id !== id);
+  renderFavorites();
 }
