@@ -1,3 +1,9 @@
+/**
+ * Bug:: al marcar un elemento como favorito y luego ingresar al botón
+ * "Learn more!" (para ver la información del personaje o planeta),
+ * al regresar se pierden los favoritos previamente seleccionados.
+ */
+
 // ESTADO GLOBAL
 
 let favorites = [];
@@ -157,17 +163,136 @@ function init() {
   }
 
   // DETAILS
-  if (document.getElementById("detail-container")) {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+if (document.getElementById("detail-container")) {
+  const params = new URLSearchParams(window.location.search);
 
-    if (!id) return;
+  const id = params.get("id");
+  const planetId = params.get("planetId");
 
+  // CHARACTER
+  if (id) {
     getCharacterById(id)
       .then(character => renderDetail(character))
       .catch(err => console.log(err));
   }
 
+  // PLANET
+  if (planetId) {
+    getPlanetById(planetId)
+      .then(planet => renderPlanetDetail(planet))
+      .catch(err => console.log(err));
+  }
+}
+
+  if (document.getElementById("planets")) {
+  getPlanets()
+    .then(data => renderPlanets(data.results))
+    .catch(err => console.log(err));
+}
 }
 
 init();
+
+//API
+function getPlanets() {
+  return fetch("https://rickandmortyapi.com/api/location")
+    .then(res => res.json());
+}
+
+function createPlanetCard(planet) {
+  return `
+    <div style="min-width: 300px;">
+      <div class="card shadow-sm">
+
+        <img src="https://picsum.photos/400/200?random=${planet.id}" class="card-img-top" style="height: 200px; object-fit: cover;">
+        
+
+        <div class="card-body">
+          <h5>${planet.name}</h5>
+
+          <p class="mb-1">Population: Unknown</p>
+          <p>Terrain: ${planet.type}</p>
+
+          <div class="d-flex justify-content-between mt-3">
+
+          <!-- BOTON DE INFO -->
+          <a href="details.html?planetId=${planet.id}" class="btn btn-outline-primary">
+          Learn more!
+          </a>
+
+          <!-- BOTON DE CORAZON-->
+          <button class="btn btn-outline-warning"
+          onclick="toggleFavorite(event, ${planet.id}, '${planet.name}')">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+function renderPlanets(planets) {
+  const container = document.querySelector("#planets");
+  container.innerHTML = "";
+
+  planets.forEach(planet => {
+    container.innerHTML += createPlanetCard(planet);
+  });
+}
+//AGREGA
+function getPlanetById(id) {
+  return fetch(`https://rickandmortyapi.com/api/location/${id}`)
+    .then(res => res.json());
+}
+//ELIMINA 
+function renderPlanetDetail(planet) {
+  const container = document.getElementById("detail-container");
+
+  container.innerHTML = `
+    <div class="row align-items-center">
+
+      <div class="col-md-6">
+        <img src="https://picsum.photos/500/300?random=${planet.id}" 
+            class="img-fluid rounded">
+      </div>
+
+      <div class="col-md-6 text-center">
+        <h1>${planet.name}</h1>
+
+        <p class="mt-3">
+          Este planeta es de tipo ${planet.type} y pertenece a la dimensión ${planet.dimension}.
+        </p>
+      </div>
+
+    </div>
+
+    <hr class="my-4">
+
+    <div class="row text-center text-danger fw-bold">
+
+      <div class="col">
+        <p>Name</p>
+        <p>${planet.name}</p>
+      </div>
+
+      <div class="col">
+        <p>Type</p>
+        <p>${planet.type}</p>
+      </div>
+
+      <div class="col">
+        <p>Dimension</p>
+        <p>${planet.dimension}</p>
+      </div>
+
+      <div class="col">
+        <p>Residents</p>
+        <p>${planet.residents.length}</p>
+      </div>
+
+    </div>
+  `;
+}
