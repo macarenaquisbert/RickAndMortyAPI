@@ -156,3 +156,49 @@ X   500s → error del servidor
 Finalmente, los datos que se intercambian suelen estar en formato JSON, que es liviano y fácil de leer tanto para humanos como para programas. Antes se utilizaba mucho XML, pero hoy en día JSON es el estándar más común.
 
 *seria una aplicación web funciona mediante la interacción de estas tres partes: el frontend realiza pedidos, la API los gestiona siguiendo ciertas reglas y el backend procesa la información y devuelve una respuesta, generalmente en formato JSON, utilizando el protocolo HTTP.
+
+---------------------------------------------------------------------------------
+
+https://www.npmjs.com/package/bootscrap 
+https://jestjs.io/docs/getting-started 
+
+package.json es la partida de nacimiento 
+dependencia de desarrollo para testiar el proyectos
+sistmas rebersionados nodejs, 
+*unit testing 
+            *unitario, es el proceso de divdir ek codigo en funiones mas pequeñas
+            y probar cada una de esas fucionespor separado, intentando romper nuestro codigo -> jest
+            babel, typescrip etc
+*ventajas 
+fomentane el cambio
+siplifica la integracion
+documentacion el codigo
+ayuda a que los errores sean mas acotados y sean mas faciles de localizar
+ahorran tiempo 
+
+npm install --save-dev jest
+npm install 
+node modules
+          nomARCHIVO
+node ./js/sum.js
+modularizacion 
+
+const sum = require('./sum'); //importar la funcion a evaluar
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+
+{
+  "scripts": {
+    "test": "jest"// corre npn run test
+  }
+}
+
+*practica de unit test*
+
+1 clonar repositorio dela practica y seguir instrucciones de README
+para su uso exitoso
+2 seguir las instrucciones de tutorial
+
+intalar y levantar el proyecto

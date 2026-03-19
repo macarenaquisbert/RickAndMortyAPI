@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 /**
  * Bug:: al marcar un elemento como favorito y luego ingresar al botón
  * "Learn more!" (para ver la información del personaje o planeta),
  * al regresar se pierden los favoritos previamente seleccionados.
  */
+=======
+>>>>>>> f52bd969a65e3e19b6261d10beb3c5ff7f54479a
 
 // ESTADO GLOBAL
 
