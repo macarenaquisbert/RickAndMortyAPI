@@ -1,3 +1,4 @@
+
 // ESTADO GLOBAL
 
 let favorites = [];

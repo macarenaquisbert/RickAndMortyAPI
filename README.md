@@ -60,13 +60,6 @@ La página detecta qué mostrar según la URL:
 * Si hay `id` → muestra personaje
 * Si hay `planetId` → muestra planeta
 
-Ejemplo:
-
-```js
-const id = params.get("id");
-const planetId = params.get("planetId");
-```
-
 ---
 
 ## Favoritos
@@ -74,5 +67,3 @@ const planetId = params.get("planetId");
 * Se guardan en un array global
 * Se agregan o eliminan con el botón del corazón
 * Se muestran en el dropdown del navbar
-
-
