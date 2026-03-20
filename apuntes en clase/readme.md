@@ -10,7 +10,7 @@ Ejemplo:
 
 https://rickandmortyapi.com/api/character
 
-¿Cuándo se usa?
+¿Cuando se usa?
 
 cuando consumís datos de otros
 
@@ -155,9 +155,21 @@ X   500s → error del servidor
 
 Finalmente, los datos que se intercambian suelen estar en formato JSON, que es liviano y fácil de leer tanto para humanos como para programas. Antes se utilizaba mucho XML, pero hoy en día JSON es el estándar más común.
 
-*seria una aplicación web funciona mediante la interacción de estas tres partes: el frontend realiza pedidos, la API los gestiona siguiendo ciertas reglas y el backend procesa la información y devuelve una respuesta, generalmente en formato JSON, utilizando el protocolo HTTP.
+mostrame el nombre del personaje en esa posición del array
+${arr[index].name} a parece esto = “Rick”, “Morty”, etc.
 
----------------------------------------------------------------------------------
+for → recorre
+[] → accede
+
+arr → lista de personajes
+
+[index] → uno en específico
+
+arr[index] → agarro un personaje
+
+.name → saco su nombre
+
+${} → lo muestro en pantalla
 
 https://www.npmjs.com/package/bootscrap 
 https://jestjs.io/docs/getting-started 
@@ -180,6 +192,7 @@ npm install --save-dev jest
 npm install 
 node modules
           nomARCHIVO
+me funciono con esto npm install jest
 node ./js/sum.js
 modularizacion 
 
