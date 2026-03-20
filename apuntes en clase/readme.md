@@ -154,7 +154,7 @@ X   500s → error del servidor
 500 → se rompió todo
 
 Finalmente, los datos que se intercambian suelen estar en formato JSON, que es liviano y fácil de leer tanto para humanos como para programas. Antes se utilizaba mucho XML, pero hoy en día JSON es el estándar más común.
-
+explicacion de for a un api 
 mostrame el nombre del personaje en esa posición del array
 ${arr[index].name} a parece esto = “Rick”, “Morty”, etc.
 
