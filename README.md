@@ -55,7 +55,7 @@ details.html?planetId=ID
 
 ## Página de detalle (details.html)
 
-La página detecta qué mostrar según la URL:
+La página detecta qué mostrar segun la URL:
 
 * Si hay `id` → muestra personaje
 * Si hay `planetId` → muestra planeta
@@ -64,6 +64,5 @@ La página detecta qué mostrar según la URL:
 
 ## Favoritos
 
-* Se guardan en un array global
-* Se agregan o eliminan con el botón del corazón
+* Se agregan o eliminan con el boton del corazon
 * Se muestran en el dropdown del navbar
